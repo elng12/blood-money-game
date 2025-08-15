@@ -17,7 +17,7 @@
     --background-light: #f9fafb;
     --background-white: #ffffff;
     --border-color: #e5e7eb;
-    
+
     /* 字体 */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-size-xs: 0.75rem;
@@ -29,7 +29,7 @@
     --font-size-3xl: 1.875rem;
     --font-size-4xl: 2.25rem;
     --font-size-5xl: 3rem;
-    
+
     /* 间距 */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
@@ -37,20 +37,20 @@
     --spacing-lg: 2rem;
     --spacing-xl: 3rem;
     --spacing-2xl: 4rem;
-    
+
     /* 阴影 */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    
+
     /* 边框圆角 */
     --radius-sm: 0.375rem;
     --radius-md: 0.5rem;
     --radius-lg: 0.75rem;
     --radius-xl: 1rem;
-    
+
     /* 过渡 */
     --transition-fast: 150ms ease-in-out;
     --transition-normal: 250ms ease-in-out;
@@ -66,7 +66,12 @@ body {
 }
 
 /* 字体 */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 600;
     line-height: 1.2;
     margin-bottom: var(--spacing-sm);
@@ -575,29 +580,52 @@ a:hover {
 
 .faq__item {
     margin-bottom: var(--spacing-xl);
-    padding: var(--spacing-lg);
     background-color: var(--background-light);
     border-radius: var(--radius-lg);
     border-left: 4px solid var(--primary-color);
+    overflow: hidden;
 }
 
 .faq__question-title {
     font-size: var(--font-size-xl);
     font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 0;
     line-height: 1.3;
+    padding: var(--spacing-lg);
+    cursor: pointer;
+    list-style: none;
+    display: block;
+    transition: background-color var(--transition-fast);
+}
+
+.faq__question-title:hover {
+    background-color: rgba(220, 38, 38, 0.05);
+}
+
+.faq__question-title h4 {
+    margin: 0;
+    display: inline;
+}
+
+.faq__question-title::marker {
+    display: none;
+}
+
+.faq__question-title::-webkit-details-marker {
+    display: none;
 }
 
 .faq__answer-content {
-    color: var(--text-secondary);
-    line-height: 1.7;
-    font-size: var(--font-size-base);
+    padding: 0 var(--spacing-lg) var(--spacing-lg);
 }
 
 .faq__answer-content p {
     margin: 0;
     text-align: left;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: var(--font-size-base);
 }
 
 
@@ -685,88 +713,89 @@ a:hover {
         padding: 0 var(--spacing-lg);
     }
 }
-    
-    .hero__title {
-        font-size: var(--font-size-4xl);
-    }
-    
-    .hero {
-        min-height: 70vh;
-    }
+
+.hero__title {
+    font-size: var(--font-size-4xl);
+}
+
+.hero {
+    min-height: 70vh;
+}
 }
 
 @media (max-width: 768px) {
     .nav__menu {
         display: none;
     }
-    
+
     .nav__cta {
         display: none;
     }
-    
+
     .nav__toggle {
         display: flex;
     }
-    
+
     .hero {
         padding: calc(80px + var(--spacing-xl)) 0 var(--spacing-xl);
     }
-    
+
     .hero__title {
         font-size: var(--font-size-3xl);
     }
-    
+
     .hero__description {
         font-size: var(--font-size-base);
     }
-    
+
     .hero__buttons {
         flex-direction: column;
         align-items: stretch;
     }
-    
+
     .section__title {
         font-size: var(--font-size-3xl);
     }
-    
+
     .features__grid,
     .how-to-play__steps,
     .why-play__reasons,
     .pro-tips__grid {
         grid-template-columns: 1fr;
     }
-    
+
     .features__section-title,
     .how-to-play__section-title,
     .why-play__section-title,
     .faq__section-title {
         font-size: var(--font-size-xl);
     }
-    
+
     .features__section,
     .how-to-play__section,
     .why-play__section,
     .faq__section {
         margin-bottom: var(--spacing-xl);
     }
-    
+
     .faq__question-title {
         font-size: var(--font-size-lg);
     }
-    
+
     .footer__content {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
+
     .footer__social {
         justify-content: center;
     }
-    
+
 
 }
 
 @media (max-width: 480px) {
+
     .container,
     .nav__container,
     .hero__container,
@@ -778,26 +807,26 @@ a:hover {
     .footer__container {
         padding: 0 var(--spacing-sm);
     }
-    
+
     .hero__title {
         font-size: var(--font-size-2xl);
     }
-    
+
     .section__title {
         font-size: var(--font-size-2xl);
     }
-    
+
     .feature__card,
     .step__card,
     .reason__card {
         padding: var(--spacing-lg);
     }
-    
+
     .btn {
         padding: var(--spacing-sm) var(--spacing-md);
         font-size: var(--font-size-sm);
     }
-    
+
     /* 移动端iframe调整 */
     .hero__game-frame {
         height: 500px;
@@ -891,8 +920,13 @@ a:hover {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* 无障碍 */
