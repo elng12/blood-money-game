@@ -4,6 +4,7 @@ Allow: /
 # Sitemap location
 Sitemap: https://bloodmoneygame.online/sitemap.xml
 Sitemap: https://bloodmoneygame.online/sitemap.txt
+Sitemap: https://bloodmoneygame.online/sitemap.html
 
 # Disallow specific files
 Disallow: /.git/

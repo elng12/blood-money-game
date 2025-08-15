@@ -17,6 +17,20 @@
     AddType text/xml .xml
 </IfModule>
 
+# Force XML files to be accessible
+<Files "sitemap.xml">
+    Order allow,deny
+    Allow from all
+    Header set Content-Type "application/xml; charset=utf-8"
+</Files>
+
+# Alternative sitemap access
+<Files "sitemap.txt">
+    Order allow,deny
+    Allow from all
+    Header set Content-Type "text/plain; charset=utf-8"
+</Files>
+
 # Set cache headers
 <IfModule mod_expires.c>
     ExpiresActive on

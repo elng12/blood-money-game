@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap Test - Blood Money Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #dc2626;
+            text-align: center;
+        }
+        .test-item {
+            margin: 15px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+        .test-link {
+            display: inline-block;
+            padding: 8px 15px;
+            background: #dc2626;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px 5px 5px 0;
+        }
+        .test-link:hover {
+            background: #b91c1c;
+        }
+        .status {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .success { background: #d1fae5; color: #065f46; }
+        .error { background: #fee2e2; color: #991b1b; }
+        .info { background: #dbeafe; color: #1e40af; }
+        .instructions {
+            background: #fef3c7;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        code {
+            background: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Sitemap Accessibility Test</h1>
+        
+        <div class="instructions">
+            <h3>📋 Instructions:</h3>
+            <p>Click each link below to test if the sitemap files are accessible. A working sitemap should display XML/text content, not an error page.</p>
+        </div>
+
+        <div class="test-item">
+            <h3>1. XML Sitemap (Standard)</h3>
+            <p>This is the standard XML sitemap that search engines prefer.</p>
+            <a href="/sitemap.xml" target="_blank" class="test-link">Test sitemap.xml</a>
+            <div class="status info">
+                <strong>Expected:</strong> XML content starting with <code>&lt;?xml version="1.0"...</code>
+            </div>
+        </div>
+
+        <div class="test-item">
+            <h3>2. Text Sitemap (Fallback)</h3>
+            <p>Simple text format that search engines also accept.</p>
+            <a href="/sitemap.txt" target="_blank" class="test-link">Test sitemap.txt</a>
+            <div class="status info">
+                <strong>Expected:</strong> Plain text with URLs listed line by line
+            </div>
+        </div>
+
+        <div class="test-item">
+            <h3>3. HTML Sitemap (User-Friendly)</h3>
+            <p>Human-readable sitemap for users and as a backup for search engines.</p>
+            <a href="/sitemap.html" target="_blank" class="test-link">Test sitemap.html</a>
+            <div class="status info">
+                <strong>Expected:</strong> Formatted HTML page with site links
+            </div>
+        </div>
+
+        <div class="test-item">
+            <h3>4. PHP Sitemap (Dynamic)</h3>
+            <p>PHP-generated sitemap (only works if server supports PHP).</p>
+            <a href="/sitemap.php" target="_blank" class="test-link">Test sitemap.php</a>
+            <div class="status info">
+                <strong>Expected:</strong> XML content with current timestamp
+            </div>
+        </div>
+
+        <div class="test-item">
+            <h3>5. Robots.txt</h3>
+            <p>Check if robots.txt is accessible and contains sitemap references.</p>
+            <a href="/robots.txt" target="_blank" class="test-link">Test robots.txt</a>
+            <div class="status info">
+                <strong>Expected:</strong> Text file with "Sitemap:" entries
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="instructions">
+            <h3>🚨 Troubleshooting:</h3>
+            <ul>
+                <li><strong>404 Error:</strong> File not uploaded to server root directory</li>
+                <li><strong>403 Forbidden:</strong> File permissions issue or server blocking XML files</li>
+                <li><strong>500 Error:</strong> Server configuration problem</li>
+                <li><strong>Download instead of display:</strong> MIME type not configured correctly</li>
+            </ul>
+        </div>
+
+        <div class="instructions">
+            <h3>✅ Next Steps:</h3>
+            <ol>
+                <li>Test each link above</li>
+                <li>Note which ones work and which show errors</li>
+                <li>In Google Search Console, submit the working sitemap URL</li>
+                <li>If none work, contact your hosting provider</li>
+            </ol>
+        </div>
+
+        <div class="status info">
+            <strong>💡 Pro Tip:</strong> Even if XML doesn't work, you can submit the HTML or TXT version to Google Search Console as a temporary solution.
+        </div>
+    </div>
+
+    <script>
+        // Add click tracking to help diagnose issues
+        document.querySelectorAll('.test-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const url = this.href;
+                console.log('Testing sitemap:', url);
+                
+                // Optional: You could add AJAX testing here
+                setTimeout(() => {
+                    console.log('If the link opened successfully, the sitemap is accessible');
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
