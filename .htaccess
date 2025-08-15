@@ -11,6 +11,12 @@
     AddOutputFilterByType DEFLATE application/x-javascript
 </IfModule>
 
+# Ensure XML files are served with correct MIME type
+<IfModule mod_mime.c>
+    AddType application/xml .xml
+    AddType text/xml .xml
+</IfModule>
+
 # Set cache headers
 <IfModule mod_expires.c>
     ExpiresActive on
