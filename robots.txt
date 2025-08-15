@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://bloodmoneygame.online/sitemap.xml
+
+# Disallow specific files
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /steering.md
+Disallow: /.gitattributes
+
+# Allow important files
+Allow: /index.html
+Allow: /demo.html
+Allow: /styles.css
+Allow: /script.js
+Allow: /README.md
